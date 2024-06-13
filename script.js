@@ -23,41 +23,34 @@ function getHumanChoice(){
 }
 
 function playRound(humanChoice, computerChoice){
+    let results = document.querySelector("#results");
+
     switch(humanChoice){
         case "rock":
             if (computerChoice == "rock"){
-                console.log("Its a tie!");
-                //return;
+                results.textContent = "Its a tie!";
             } else if (computerChoice == "paper"){
-                console.log(`You lose ${computerChoice} beats ${humanChoice}.`);
-                //return "computer";
+                results.textContent = `You lose ${computerChoice} beats ${humanChoice}.`;
             } else if (computerChoice == "scissor"){
-                console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
-                //return "human";
+                results.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
             };
             break;
         case "paper":
             if (computerChoice == "rock"){
-                console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
-                //return "human";
+                results.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
             } else if (computerChoice == "paper"){
-                console.log("Its a tie!");
-                //return;
+                results.textContent = "Its a tie!";
             } else if (computerChoice == "scissor"){
-                console.log(`You lose ${computerChoice} beats ${humanChoice}.`);
-                //return "computer";
+                results.textContent = `You lose ${computerChoice} beats ${humanChoice}.`;
             };
             break;
         case "scissor":
             if (computerChoice == "rock"){
-                console.log(`You lose ${computerChoice} beats ${humanChoice}.`);
-                //return "computer";
+                results.textContent = `You lose ${computerChoice} beats ${humanChoice}.`;
             } else if (computerChoice == "paper"){
-                console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
-                //return "human";
+                results.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
             } else if (computerChoice == "scissor"){
-                console.log("Its a tie!");
-                //return;
+                results.textContent = "Its a tie!";
             };
             break;
     };
