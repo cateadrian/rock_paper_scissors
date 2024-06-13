@@ -62,3 +62,21 @@ function playRound(humanChoice, computerChoice){
             break;
     };
 }
+
+let buttons = document.querySelector("#buttons");
+
+buttons.addEventListener("click", function(event){
+    let target = event.target;
+
+    switch(target.id){
+        case "rockButton":
+            playRound("rock", getComputerChoice());
+            break;
+        case "paperButton":
+            playRound("paper", getComputerChoice());
+            break;
+        case "scissorButton":
+            playRound("scissor", getComputerChoice());
+            break;
+    };
+});
