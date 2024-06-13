@@ -12,33 +12,33 @@ function getComputerChoice(){
     };
 }
 
-function playRound(humanChoice, computerChoice){
+function playRound(userChoice, computerChoice){
     let results = document.querySelector("#results");
 
-    switch(humanChoice){
+    switch(userChoice){
         case "rock":
             if (computerChoice == "rock"){
                 results.textContent = "Its a tie!";
             } else if (computerChoice == "paper"){
-                results.textContent = `You lose ${computerChoice} beats ${humanChoice}.`;
+                results.textContent = `You lose ${computerChoice} beats ${userChoice}.`;
             } else if (computerChoice == "scissor"){
-                results.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
+                results.textContent = `You win! ${userChoice} beats ${computerChoice}.`;
             };
             break;
         case "paper":
             if (computerChoice == "rock"){
-                results.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
+                results.textContent = `You win! ${userChoice} beats ${computerChoice}.`;
             } else if (computerChoice == "paper"){
                 results.textContent = "Its a tie!";
             } else if (computerChoice == "scissor"){
-                results.textContent = `You lose ${computerChoice} beats ${humanChoice}.`;
+                results.textContent = `You lose ${computerChoice} beats ${userChoice}.`;
             };
             break;
         case "scissor":
             if (computerChoice == "rock"){
-                results.textContent = `You lose ${computerChoice} beats ${humanChoice}.`;
+                results.textContent = `You lose ${computerChoice} beats ${userChoice}.`;
             } else if (computerChoice == "paper"){
-                results.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
+                results.textContent = `You win! ${userChoice} beats ${computerChoice}.`;
             } else if (computerChoice == "scissor"){
                 results.textContent = "Its a tie!";
             };
