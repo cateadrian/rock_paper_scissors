@@ -12,16 +12,6 @@ function getComputerChoice(){
     };
 }
 
-function getHumanChoice(){
-    const humanChoice = prompt("Please choose Rock, Paper, or Scissors: ").toLowerCase();
-
-    if(humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissor"){
-        return humanChoice;
-    } else {
-        console.log("Invalid Choice");
-    };
-}
-
 function playRound(humanChoice, computerChoice){
     let results = document.querySelector("#results");
 
