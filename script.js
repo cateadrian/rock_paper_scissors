@@ -22,7 +22,7 @@ function getHumanChoice(){
     };
 }
 
-function playRound(humanChoice, computerChoice, humanScore, computerScore){
+function playRound(humanChoice, computerChoice){
     switch(humanChoice){
         case "rock":
             if (computerChoice == "rock"){
