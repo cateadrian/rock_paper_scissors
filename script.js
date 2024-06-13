@@ -27,75 +27,38 @@ function playRound(humanChoice, computerChoice){
         case "rock":
             if (computerChoice == "rock"){
                 console.log("Its a tie!");
-                return;
+                //return;
             } else if (computerChoice == "paper"){
                 console.log(`You lose ${computerChoice} beats ${humanChoice}.`);
-                return "computer";
+                //return "computer";
             } else if (computerChoice == "scissor"){
                 console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
-                return "human";
+                //return "human";
             };
+            break;
         case "paper":
             if (computerChoice == "rock"){
                 console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
-                return "human";
+                //return "human";
             } else if (computerChoice == "paper"){
                 console.log("Its a tie!");
-                return;
+                //return;
             } else if (computerChoice == "scissor"){
                 console.log(`You lose ${computerChoice} beats ${humanChoice}.`);
-                return "computer";
+                //return "computer";
             };
+            break;
         case "scissor":
             if (computerChoice == "rock"){
                 console.log(`You lose ${computerChoice} beats ${humanChoice}.`);
-                return "computer";
+                //return "computer";
             } else if (computerChoice == "paper"){
                 console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
-                return "human";
+                //return "human";
             } else if (computerChoice == "scissor"){
                 console.log("Its a tie!");
-                return;
+                //return;
             };
+            break;
     };
 }
-
-function playGame(){
-    let humanScore = 0;
-    let computerScore = 0;
-
-     for (let i = 0; i < 5; i++){
-        let winner = playRound(getHumanChoice(), getComputerChoice());
-        switch (winner){
-            case "human":
-                humanScore++;
-                break;
-            case "computer":
-                humanScore++;
-                break;
-            case "computer":
-                computerScore++;
-                break;
-            default:
-                break;
-        };
-    }; 
-
-
-
-     if(humanScore > computerScore){
-        console.log("Congratulations! You win!");
-        console.log(`Player score: ${humanScore}`);
-        console.log(`Computer score: ${computerScore}`);
-    } else if (humanScore < computerScore){
-        console.log("Sorry, you lose! Please play again.");
-        console.log(`Player score: ${humanScore}.`);
-        console.log(`Computer score: ${computerScore}`);
-    } else {
-        console.log("Its a tie!");
-        console.log(`Player score: ${humanScore}.`);
-        console.log(`Computer score: ${computerScore}`);
-    }; 
-}
-
-
