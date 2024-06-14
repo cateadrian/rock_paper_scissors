@@ -21,29 +21,29 @@ function playRound(userChoice, computerChoice){
                 results.textContent = "Its a tie!";
                 return "tie";
             } else if (computerChoice == "paper"){
-                results.textContent = `You lose ${computerChoice} beats ${userChoice}.`;
+                results.textContent = `${computerChoice} beats ${userChoice}.`;
                 return "computer";
             } else if (computerChoice == "scissor"){
-                results.textContent = `You win! ${userChoice} beats ${computerChoice}.`;
+                results.textContent = `${userChoice} beats ${computerChoice}.`;
                 return "user";
             };
         case "paper":
             if (computerChoice == "rock"){
-                results.textContent = `You win! ${userChoice} beats ${computerChoice}.`;
+                results.textContent = `${userChoice} beats ${computerChoice}.`;
                 return "user";
             } else if (computerChoice == "paper"){
                 results.textContent = "Its a tie!";
                 return "tie";
             } else if (computerChoice == "scissor"){
-                results.textContent = `You lose ${computerChoice} beats ${userChoice}.`;
+                results.textContent = `${computerChoice} beats ${userChoice}.`;
                 return "computer";
             };
         case "scissor":
             if (computerChoice == "rock"){
-                results.textContent = `You lose ${computerChoice} beats ${userChoice}.`;
+                results.textContent = `${computerChoice} beats ${userChoice}.`;
                 return "computer";
             } else if (computerChoice == "paper"){
-                results.textContent = `You win! ${userChoice} beats ${computerChoice}.`;
+                results.textContent = `${userChoice} beats ${computerChoice}.`;
                 return "user";
             } else if (computerChoice == "scissor"){
                 results.textContent = "Its a tie!";
@@ -83,6 +83,13 @@ buttons.addEventListener("click", function(event){
     };
 
     score.textContent = `User: ${userScore} --- Computer: ${computerScore}`;
+    let results = document.querySelector("#results");
+
+    if (userScore == 5){
+        results.textContent = "You Win!";
+    } else if (computerScore == 5){
+        results.textContent = "You Lose!";
+    };
 });
 
 
