@@ -19,47 +19,71 @@ function playRound(userChoice, computerChoice){
         case "rock":
             if (computerChoice == "rock"){
                 results.textContent = "Its a tie!";
+                return "tie";
             } else if (computerChoice == "paper"){
                 results.textContent = `You lose ${computerChoice} beats ${userChoice}.`;
+                return "computer";
             } else if (computerChoice == "scissor"){
                 results.textContent = `You win! ${userChoice} beats ${computerChoice}.`;
+                return "user";
             };
-            break;
         case "paper":
             if (computerChoice == "rock"){
                 results.textContent = `You win! ${userChoice} beats ${computerChoice}.`;
+                return "user";
             } else if (computerChoice == "paper"){
                 results.textContent = "Its a tie!";
+                return "tie";
             } else if (computerChoice == "scissor"){
                 results.textContent = `You lose ${computerChoice} beats ${userChoice}.`;
+                return "computer";
             };
-            break;
         case "scissor":
             if (computerChoice == "rock"){
                 results.textContent = `You lose ${computerChoice} beats ${userChoice}.`;
+                return "computer";
             } else if (computerChoice == "paper"){
                 results.textContent = `You win! ${userChoice} beats ${computerChoice}.`;
+                return "user";
             } else if (computerChoice == "scissor"){
                 results.textContent = "Its a tie!";
+                return "tie";
             };
-            break;
     };
 }
 
+let userScore = 0;
+let computerScore = 0;
+let winner;
+
 let buttons = document.querySelector("#buttons");
+
+let score = document.querySelector("#score");
+score.textContent = `User: ${userScore} --- Computer: ${computerScore}`;
 
 buttons.addEventListener("click", function(event){
     let target = event.target;
 
     switch(target.id){
         case "rockButton":
-            playRound("rock", getComputerChoice());
+            winner = playRound("rock", getComputerChoice());
             break;
         case "paperButton":
-            playRound("paper", getComputerChoice());
+            winner = playRound("paper", getComputerChoice());
             break;
         case "scissorButton":
-            playRound("scissor", getComputerChoice());
+            winner = playRound("scissor", getComputerChoice());
             break;
     };
+
+    if (winner === "user"){
+        userScore++;
+    } else if(winner === "computer"){
+        computerScore++;
+    };
+
+    score.textContent = `User: ${userScore} --- Computer: ${computerScore}`;
 });
+
+
+
